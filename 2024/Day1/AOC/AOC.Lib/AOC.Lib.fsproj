@@ -6,7 +6,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Library.fs"/>
+        <Compile Include="LocationReconcilaition.fs" />
+        <Compile Include="StringArrayToIntArray.fs" />
     </ItemGroup>
 
 </Project>

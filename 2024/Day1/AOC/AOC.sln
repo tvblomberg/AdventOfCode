@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AOC.Lib", "AOC.Lib\AOC.Lib.fsproj", "{22C60E57-0239-4851-8F83-35D731F214AB}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AOC.Tests", "AOC.Tests\AOC.Tests.fsproj", "{8BAD25AA-7A9B-4898-82D5-67757A7F0E2A}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AOC.Console", "AOC.Console\AOC.Console.fsproj", "{F83A2AFE-A960-4D4C-95B6-09890C575318}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22C60E57-0239-4851-8F83-35D731F214AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22C60E57-0239-4851-8F83-35D731F214AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22C60E57-0239-4851-8F83-35D731F214AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22C60E57-0239-4851-8F83-35D731F214AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BAD25AA-7A9B-4898-82D5-67757A7F0E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BAD25AA-7A9B-4898-82D5-67757A7F0E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BAD25AA-7A9B-4898-82D5-67757A7F0E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BAD25AA-7A9B-4898-82D5-67757A7F0E2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F83A2AFE-A960-4D4C-95B6-09890C575318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83A2AFE-A960-4D4C-95B6-09890C575318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83A2AFE-A960-4D4C-95B6-09890C575318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F83A2AFE-A960-4D4C-95B6-09890C575318}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
