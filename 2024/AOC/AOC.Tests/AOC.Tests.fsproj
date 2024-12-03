@@ -10,8 +10,8 @@
 
     <ItemGroup>
         <Compile Include="LocationReconciliationTests.fs" />
-        <Compile Include="Program.fs" />
-        <Compile Include="StringArrayToIntArrayTests.fs" />
+        <Compile Include="StringArrayConverterTests.fs" />
+        <Compile Include="ReactorReportEvaluatorTests.fs" />
     </ItemGroup>
 
     <ItemGroup>

@@ -6,8 +6,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="LocationReconcilaition.fs" />
-        <Compile Include="StringArrayToIntArray.fs" />
+        <Compile Include="LocationReconciliation.fs" />
+        <Compile Include="StringArrayConverter.fs" />
+        <Compile Include="ReactorReportEvaluator.fs" />
+        <Folder Include="Helpers\" />
     </ItemGroup>
 
 </Project>
