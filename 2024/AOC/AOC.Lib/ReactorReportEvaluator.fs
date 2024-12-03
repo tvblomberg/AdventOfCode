@@ -16,7 +16,7 @@ module ReactorReportEvaluator =
     let private isIncreasingOrDecreasingSafely pairs =
         (Array.forall isIncreasing pairs || Array.forall isDecreasing pairs) && Array.forall isWithinRange pairs
 
-    let isReportSafe reportValues =
+    let private isReportSafe reportValues =
         reportValues
         |> Array.pairwise
         |> isIncreasingOrDecreasingSafely
@@ -39,15 +39,15 @@ module ReactorReportEvaluator =
             | true -> ReportStatus.Safe
             | false -> ReportStatus.Unsafe
 
-    let evaluateReportString report = evaluateReportWith isReportSafe report
-
-    let evaluateReportStringWithSafetyDampener report = evaluateReportWith tryWithSafetyDampener report
-
     let private countSafeReports evaluateFn reports =
         reports
         |> Array.map evaluateFn
         |> Array.filter ((=) ReportStatus.Safe)
         |> Array.length
+
+    let evaluateReportString report = evaluateReportWith isReportSafe report
+
+    let evaluateReportStringWithSafetyDampener report = evaluateReportWith tryWithSafetyDampener report
 
     let safetyCount reports =
         countSafeReports evaluateReportString reports
