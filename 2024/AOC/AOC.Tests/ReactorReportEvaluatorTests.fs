@@ -4,42 +4,6 @@ open AOC.Lib
 open Xunit
 open ReactorReportEvaluator
 
-[<Fact>]
-let ``removeAt 0 should remove the first element from the array`` () : unit =
-    let actual = removeAt 0 [|1; 2; 3; 4; 5|]
-    let expected = [|2; 3; 4; 5|]
-    
-    Assert.Equal<int array>(expected, actual)
-    
-[<Fact>]
-let ``removeAt -1 should return the entire array`` () : unit =
-    let actual = removeAt -1 [|1; 2; 3; 4; 5|]
-    let expected = [|1; 2; 3; 4; 5|]
-    
-    Assert.Equal<int array>(expected, actual)
-    
-[<Fact>]
-let ``removeAt middle index should return the array without that index`` () : unit =
-    let actual = removeAt 2 [|1; 2; 3; 4; 5|]
-    let expected = [|1; 2; 4; 5|]
-    
-    Assert.Equal<int array>(expected, actual)
-    
-[<Fact>]
-let ``removeAt end index should return the array without that index`` () : unit =
-    let actual = removeAt 4 [|1; 2; 3; 4; 5|]
-    let expected = [|1; 2; 3; 4|]
-    
-    Assert.Equal<int array>(expected, actual)
-    
-[<Fact>]
-let ``removeAt bad index should return the entire array`` () : unit =
-    let actual = removeAt 20 [|1; 2; 3; 4; 5|]
-    let expected = [|1; 2; 3; 4; 5;|]
-    
-    Assert.Equal<int array>(expected, actual)
-
-
 (*
 7 6 4 2 1: Safe because the levels are all decreasing by 1 or 2.
 1 2 7 8 9: Unsafe because 2 7 is an increase of 5.

@@ -6,10 +6,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="Utils\ArrayUtils.fs" />
+        <Compile Include="Utils\StringArrayConverter.fs" />
         <Compile Include="LocationReconciliation.fs" />
-        <Compile Include="StringArrayConverter.fs" />
         <Compile Include="ReactorReportEvaluator.fs" />
-        <Folder Include="Helpers\" />
     </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-namespace AOC.Lib
+namespace AOC.Lib.Utils
 
 open System
 
