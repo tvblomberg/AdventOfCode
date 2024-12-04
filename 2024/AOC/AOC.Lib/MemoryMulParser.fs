@@ -4,9 +4,9 @@ open System
 open System.Text.RegularExpressions
 
 module MemoryMulParser =
-    let private parseGroups (m: Match) = Int32.Parse(m.Groups[1].Value), Int32.Parse(m.Groups[2].Value)
+    let private parseMatchToTuple (m: Match) = Int32.Parse(m.Groups[1].Value), Int32.Parse(m.Groups[2].Value)
     
-    let private multipleTupleArray (input: (int * int) array) =
+    let private calculateAndMultiply (input: (int * int) array) =
         input
         |> Array.map (fun (a, b) -> a * b)
         |> Array.sum
@@ -16,13 +16,13 @@ module MemoryMulParser =
         
         Regex.Replace(input, pattern, "-")
     
-    let parse (input: string) =
+    let parseMulToTupleArray (input: string) =
         let pattern = @"mul\((\d{1,3}),(\d{1,3})\)"
         
         Regex.Matches(input, pattern)
-        |> Seq.map parseGroups
+        |> Seq.map parseMatchToTuple
         |> Seq.toArray
         
-    let parseAndMultiply input = multipleTupleArray (parse input)
+    let parseAndMultiply input = input |> parseMulToTupleArray |> calculateAndMultiply
     
-    let sanitizeParseAndMultiply input = multipleTupleArray (parse (sanitizeInput input))
+    let sanitizeParseAndMultiply input = input |> sanitizeInput |> parseAndMultiply

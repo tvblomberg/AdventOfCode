@@ -7,7 +7,7 @@ let ``parse should return the valid digits in pairs from a string`` () : unit =
     let input = "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))"
     let expected = [| (2, 4); (5, 5); (11, 8); (8, 5) |]
     
-    let actual = parse input
+    let actual = parseMulToTupleArray input
     
     Assert.Equal<int * int>(expected, actual)
     
@@ -65,7 +65,7 @@ let ``sanitizeParseAndMultiply two donts and a do should not disable the `` () :
 let ``parse bad string should return 0 results`` (input, _) : unit =
     let expected = []
     
-    let actual = parse input
+    let actual = parseMulToTupleArray input
     
     Assert.Equal<int * int>(expected, actual)
     
@@ -84,7 +84,7 @@ let ``parse bad string should return 0 results`` (input, _) : unit =
 let ``parse should parse numbers up to 3 digits`` (input, expectedDigit1, expectedDigit2, _) : unit =
     let expected = [expectedDigit1, expectedDigit2]
     
-    let actual = parse input
+    let actual = parseMulToTupleArray input
     
     Assert.Equal<int * int>(expected, actual)
     
