@@ -10,6 +10,7 @@
         <Compile Include="Utils\StringArrayConverter.fs" />
         <Compile Include="LocationReconciliation.fs" />
         <Compile Include="ReactorReportEvaluator.fs" />
+        <Compile Include="MemoryMulParser.fs" />
     </ItemGroup>
 
 </Project>

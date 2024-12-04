@@ -13,6 +13,7 @@
         <Compile Include="StringArrayConverterTests.fs" />
         <Compile Include="ReactorReportEvaluatorTests.fs" />
         <Compile Include="Utils\ArrayUtilsTests.fs" />
+        <Compile Include="MemoryMulParserTests.fs" />
     </ItemGroup>
 
     <ItemGroup>

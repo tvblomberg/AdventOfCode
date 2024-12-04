@@ -1,6 +1,5 @@
 namespace AOC.Lib
 
-
 open AOC.Lib.Utils.ArrayUtils
 open AOC.Lib.Utils.StringArrayConverter
 
