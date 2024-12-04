@@ -11,6 +11,11 @@ module MemoryMulParser =
         |> Array.map (fun (a, b) -> a * b)
         |> Array.sum
     
+    let private sanitizeInput (input: string) =
+        let pattern = @"don't\(\).*?(do\(\)|$)"
+        
+        Regex.Replace(input, pattern, "-")
+    
     let parse (input: string) =
         let pattern = @"mul\((\d{1,3}),(\d{1,3})\)"
         
@@ -19,3 +24,5 @@ module MemoryMulParser =
         |> Seq.toArray
         
     let parseAndMultiply input = multipleTupleArray (parse input)
+    
+    let sanitizeParseAndMultiply input = multipleTupleArray (parse (sanitizeInput input))

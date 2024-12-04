@@ -19,6 +19,42 @@ let ``parseAndMultiple should multiply all the valid values and sum them`` () : 
     let actual = parseAndMultiply input
     
     Assert.Equal(expected, actual)
+    
+[<Fact>]
+let ``sanitizeParseAndMultiply should remove dont't up to do and multiply all the valid values and sum them`` () : unit =
+    let input = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"
+    let expected = 2*4 + 8*5
+    
+    let actual = sanitizeParseAndMultiply input
+    
+    Assert.Equal(expected, actual)
+
+[<Fact>]
+let ``sanitizeParseAndMultiply should remove dont't till the end and multiply all the valid values and sum them`` () : unit =
+    let input = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)un?mul(8,5))"
+    let expected = 2*4
+    
+    let actual = sanitizeParseAndMultiply input
+    
+    Assert.Equal(expected, actual)
+
+[<Fact>]
+let ``sanitizeParseAndMultiply should remove multiple dont'ts and multiply all the valid values and sum them`` () : unit =
+    let input = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))don't()_mul(5,5)"
+    let expected = 2*4 + 8*5
+    
+    let actual = sanitizeParseAndMultiply input
+    
+    Assert.Equal(expected, actual)
+
+[<Fact>]
+let ``sanitizeParseAndMultiply two donts and a do should not disable the `` () : unit =
+    let input = "xmul(2,4)&mul[3,7]!^don't()dont't()do()?mul(8,5))don't()_mul(5,5)"
+    let expected = 2*4 + 8*5
+    
+    let actual = sanitizeParseAndMultiply input
+    
+    Assert.Equal(expected, actual)
 
 [<Theory>]
 [<InlineData("xmul(2%&mul[3,7]!@^do_not_mul(5+mul(32,64]then(mul(11mul(8)", "No matches")>]
