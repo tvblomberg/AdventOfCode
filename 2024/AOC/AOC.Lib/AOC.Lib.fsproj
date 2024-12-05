@@ -11,6 +11,7 @@
         <Compile Include="LocationReconciliation.fs" />
         <Compile Include="ReactorReportEvaluator.fs" />
         <Compile Include="MemoryMulParser.fs" />
+        <Compile Include="PuzzleSolver.fs" />
     </ItemGroup>
 
 </Project>

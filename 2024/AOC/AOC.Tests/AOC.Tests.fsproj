@@ -14,6 +14,7 @@
         <Compile Include="ReactorReportEvaluatorTests.fs" />
         <Compile Include="Utils\ArrayUtilsTests.fs" />
         <Compile Include="MemoryMulParserTests.fs" />
+        <Compile Include="PuzzleSolverTests.fs" />
     </ItemGroup>
 
     <ItemGroup>
